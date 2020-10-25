@@ -58,3 +58,4 @@ struct alignTest_struct_2
 	int i3;
 };
 
+#pragma pack(pop)
