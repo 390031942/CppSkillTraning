@@ -44,8 +44,21 @@ namespace Type_Traits {
 	template<>
 	struct is_Integral<unsigned> : ::true_type {};
 
-	//实现元函数：如果输入的元数据T是指针类型就返回const T，否则返回const T*
+	//实现元函数to_const_pointer_type：如果输入的元数据T是指针类型就返回const T，否则返回const T*
+	
+	//模板特化实现
+	template<typename T>
+	struct to_const_pointer_type
+	{
+		typedef const T*       type;
+	};
+	template<typename T>
+	struct to_const_pointer_type<T*>
+	{
+		typedef const T        type;
+	};
 
+	//基于conditional的实现
 }
 
 

@@ -29,9 +29,10 @@ struct Sum<Last>
 {
     enum { value = sizeof(Last) };
 };
+
+constexpr int add(int a, int b) { return a + b; };
+
 int main()
 {
-    int sum = Sum<int, decltype(std::vector<std::pair<int,int>>()), int, double > ().value;
-    std::cout << sum;
     system("pause");
 }
